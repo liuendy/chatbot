@@ -1,0 +1,58 @@
+{
+	"info": {
+		"_postman_id": "11e2f19b-6649-4b0a-aeb1-17a61db2af31",
+		"name": "Feedback Session API Tests",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "4734620"
+	},
+	"item": [
+		{
+			"name": "Create Feedback Session",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"SessionID\": \"session123\", \"UserID\": \"user123\", \"FeedbackItems\": []}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/feedback_sessions",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"feedback_sessions"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Feedback Session",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/feedback_sessions/session123",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"feedback_sessions",
+						"session123"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

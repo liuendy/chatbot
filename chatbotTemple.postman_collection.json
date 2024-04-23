@@ -1,0 +1,89 @@
+{
+	"info": {
+		"_postman_id": "6b2ec1b2-1561-4c4f-867f-5d334616593c",
+		"name": "chatbotTemple",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "4734620"
+	},
+	"item": [
+		{
+			"name": "Create Message Template",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n   \"templateId\": \"temp123\",\n   \"content\": \"Hello, this is a template\",\n   \"usageContext\": \"welcome_email\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/templates",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"templates"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Template",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/templates/temp123",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"templates",
+						"temp123"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Template",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/templates/temp123",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"templates",
+						"temp123"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Templates",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/templates",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"templates"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
