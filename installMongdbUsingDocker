@@ -1,0 +1,38 @@
+
+please use these commands of the follow to install mongDb,and create collections definition.
+
+
+----------------------------------------------------
+
+
+docker pull mongo:latest
+
+
+docker run -itd --name mongo  --network chatbot-net -p 27017:27017 mongo --auth
+
+docker exec -it mongo mongo admin
+
+db.createUser({ user:'admin',pwd:'admin',roles:[ { role:'userAdminAnyDatabase', db: 'admin'}]}); 
+
+db.auth('admin', 'admin')
+
+use chatbot
+
+db.createUser({ user: "admin", pwd: "admin", roles: [{ role: "dbOwner", db: "chatbot" }] })
+
+db.auth('admin', 'admin')
+
+db.createCollection("chat_sessions")
+db.createCollection("messages")
+db.createCollection("feedback_sessions")
+db.createCollection("message_templates")
+
+db.chat_sessions.createIndex({"sessionId": 1})
+db.messages.createIndex({"messageId": 1})
+db.messages.createIndex({"sessionId": 1})
+
+db.feedback_sessions.createIndex({"sessionId": 1})
+db.message_templates.createIndex({"templateId": 1})
+
+----------------------------------------------------
+
